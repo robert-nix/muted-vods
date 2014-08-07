@@ -113,7 +113,9 @@ getBlocks = (channel) ->
           o.game = result.game
           pending_vod_infos--
           if pending_vod_infos is 0
-            status.finished = true
+            status.finished = true  
+    if pending_vod_infos is 0
+      status.finished = true
 
     status = _.extend status, {
       summary, affected
